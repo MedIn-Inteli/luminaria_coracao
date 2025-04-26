@@ -8,12 +8,11 @@
 
 <br>
 
-# Nome do Projeto
+# Luminária de Coração com Sensor de Batimentos Cardíacos (V.1 - 2024)
 
 ## 👨‍💻 Integrantes:
-- <a href="https://www.linkedin.com/in/example1">Nome do Integrante 1</a>
-- <a href="https://www.linkedin.com/in/example2">Nome do Integrante 2</a>
-- <a href="https://www.linkedin.com/in/example3">Nome do Integrante 3</a>
+- <a href="https://www.linkedin.com/in/kethlenmartins/">Kethlen Martins</a>
+- <a href="https://www.linkedin.com/in/carol-pascarelli/">Carolina Pascarelli</a>
 
 ## 📜 Descrição do Projeto
 
