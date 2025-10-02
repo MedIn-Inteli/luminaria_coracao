@@ -9,11 +9,13 @@ Esta seção descreve os componentes de hardware utilizados no projeto e como el
 ## 📋 Especificações Técnicas
 
 | Componente        | Modelo/Referência  | Quantidade | Especificações          | Observações                 |
-|--------------------|--------------------|------------|-------------------------|-----------------------------|
-| Microcontrolador  | Arduino Uno R3     | 1          | 5V, 16MHz              | Principal unidade de controle. |
-| Sensor EMG        | MyoWare            | 2          | 0-5V analógico         | Utilizado para leitura de sinais musculares. |
-| LED Strip         | WS2812B            | 1          | 84 LEDs, alimentação 5V | Indica visualmente a força capturada. |
-| Resistores        | 330Ω               | 2          | Resistência de carga.  | Conectados aos pinos de dados do LED. |
+|--------------------|-------------------|------------|-------------------------|-----------------------------|
+| Microcontrolador  | ESP32-WROOM-32U    | 1          | 5V                      | Principal unidade de controle. |
+| Oxímetro de Pulso | MAX30100           | 1          | 0-3.3V analógico        | Utilizado para leitura de batimentos cardíacos. |
+| Fita de led       | WS2812b            | 4          | 84 LEDs, alimentação 5V | Indica visualmente a ocorrência do batimento cardíaco |
+| Display           | oled, SSD1306      | 1          | 3.3V                    | Usado para simulação de eletrocardiograma. |
+| Resistores        | 4,7kΩ              | 1          | Resistência de carga.   | Conectado entre o 3.3V e o pino INT do MAX30100 |
+| Push Bottom       |              | 2          |    | Usado para alterar o estado da fita de led. |
 
 ---
 
