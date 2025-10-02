@@ -21,9 +21,21 @@ Esta seção descreve os componentes de hardware utilizados no projeto e como el
 
 O diagrama elétrico configura-se como o esquemático da placa, feito no software de desenvolvimento KiCAD, conforme a figura abaixo:
 
-![Diagrama do Circuito](../assets/esquematico.png)
+<p align = "center">Figura 1 - Esquemático </p>
+<div align = "center">
+  <img src = "/assets/esquematico.png">
+</div>
+<p align = "center"> Fonte: material produzido pelos autores.</p>
 
 ---
+
+## PCI - Placa de Circuito Impresso
+
+<p align = "center">Figura 2 - Placa de Circuito Impresso </p>
+<div align = "center">
+  <img src = "/assets/pci.png">
+</div>
+<p align = "center"> Fonte: material produzido pelos autores.</p>
 
 ## 🔐 Conexões de Hardware
 
