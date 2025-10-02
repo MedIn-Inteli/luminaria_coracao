@@ -1,6 +1,8 @@
 # Hardware Documentation - Luminária do Med-In
 O documento tem o fito de descrever as especificações técnicas no que tange ao hardware do projeto da Luminária do Med-In. 
 
+## Funcionamento Geral 
+
 ## 1. Arquitetura da Solução
 
 ### 1.1 Componentes e especificações Técnicas
@@ -17,6 +19,12 @@ O documento tem o fito de descrever as especificações técnicas no que tange a
 ### 1.1.1 Características do microcontrolador ESP32 WROOM 32U
 
 ### 1.1.2 Características do Oxímetro de Pulso MAX30100
+O MAX30100 configura-se como um sensor de oximetria de pulso em forma de dispositivo biométrico integrado. Nesse sentido, o componente contempla 2 LEDS (um para emissão de luz infravermelha e um para emissão de luz veremelha), um fotodector e um sistema eletronico de processamento de sinal.
+
+#### 1.1.2.1 O que é oximetria de pulso?
+Oximetria de pulso é um método não invasivo de monitorar a frequência cardíaca e o nível de saturação do oxigênio no sangue de uma pessoa.
+
+#### 1.1.2.1 Como o sensor monitora o nível de saturação do oxigênio no sangue?
 
 #### 1.1.2.1 Por que usar o MAX30100 ao invés do sensor de batimentos cardíacos comum?
 
@@ -26,15 +34,15 @@ O documento tem o fito de descrever as especificações técnicas no que tange a
 
 ### 1.2 Conexões de Hardware
 
-| Componente  | Pino no Microcontrolador | Conexão Física        |
-|-------------|--------------------------|-----------------------|
-| Fita de LED      | 25                  | Via conector 3 pinos  |
-| Push Bottom 1    | 27                  | Via conector 3 pinos  |
-| Push Bottom 2    | 32                  | Via conector 3 pinos  |
-| SCL geral        | 22                  | Via cabo jumper       |
-| SDA geral        | 21                  | Via cabo jumper       |
-| GND Geral        | GND                 | Barramento comum      |
-| VCC Geral        | 5V                  | Fonte regulada 5V     |
+| Componente  | Pino no Microcontrolador | 
+|-------------|--------------------------|
+| Fita de LED      | 25                  | 
+| Push Bottom 1    | 27                  | 
+| Push Bottom 2    | 32                  | 
+| SCL geral        | 22                  | 
+| SDA geral        | 21                  | 
+| GND Geral        | GND                 | 
+| VCC Geral        | 5V                  | 
 
 ## 2. Diagrama de Circuito
 
