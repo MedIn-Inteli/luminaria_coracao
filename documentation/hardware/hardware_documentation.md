@@ -1,45 +1,30 @@
-# Template de Documentação para Hardware
+# Hardware Documentation - Luminária do Med-In
+O documento tem o fito de descrever as especificações técnicas no que tange ao hardware do projeto da Luminária do Med-In. 
 
-## 🔠 Visão Geral
+## 1. Arquitetura da Solução
 
-Esta seção descreve os componentes de hardware utilizados no projeto e como eles interagem entre si. Inclui detalhes sobre conexões, esquemas elétricos e requisitos de alimentação.
+### 1.1 Componentes e especificações Técnicas
+| Categoria | Componente | Descrição | Função | Especificações | 
+|-----------|------------|-----------|--------|---------------------- |
+| Microcontrolador | ESP32 WROOM 32U | Microcontrolador com CPU dual-core, conectividade Wi-Fi e Bluetooth, e 16 MB de memória flash | Gerenciar todos os dispositivos e realizar processamento centralizado do sistema, de modo a receber os dados do oxímetro de pulso e enviar sinais para a fita de led e para o display, por intermédio da comunicação 12C | 5V | 
+| Sensor | MAX30100 | Oxímetro de Pulso | Identificar o valor do BPM do usuário | 3.3V, comunicação 12C | 
+| Feedback Visual | WS2812b | Fita de LED com 4 LEDs | Indicar visualmente a ocorrência de um batimento cardíaco. | 84 LEDs, alimentação 5V | 
+| Feedback Visual | oled SDD1306 | Display | Simular um eletrocardiograma | 3.3V, comunicação 12C | 
+| Controle Manual | Botão de Reset | Botão tátil momentâneo, conectado ao microcontrolador | Reinicializar o sistema para o estado inicial. Usado para trocar o usuário sem precisar tirar a luminária da fonte de alimentação |  | 
+| Controle Manual | Botão de estado | Botão tátil momentâneo, conectado ao microcontrolador | Alterar o estado da fita de LED |  | 
+| Resistor de pull-up | Resistor de 4,7kΩ | Resistor de carga, conectado entre o SDA ou o SCL e o VCC.  | Usado para garantir que o SDA e o SCL estejam sempre no nível lógico "alto" quando não estiver sendo ativado pelo microcontrolador. | 4,7kΩ| 
 
----
+### 1.1.1 Características do microcontrolador ESP32 WROOM 32U
 
-## 📋 Especificações Técnicas
+### 1.1.2 Características do Oxímetro de Pulso MAX30100
 
-| Componente        | Modelo/Referência  | Quantidade | Especificações          | Observações                 |
-|--------------------|-------------------|------------|-------------------------|-----------------------------|
-| Microcontrolador  | ESP32-WROOM-32U    | 1          | 5V                      | Principal unidade de controle. |
-| Oxímetro de Pulso | MAX30100           | 1          | 0-3.3V analógico        | Utilizado para leitura de batimentos cardíacos. |
-| Fita de led       | WS2812b            | 4          | 84 LEDs, alimentação 5V | Indica visualmente a ocorrência do batimento cardíaco |
-| Display           | oled, SSD1306      | 1          | 3.3V                    | Usado para simulação de eletrocardiograma. |
-| Resistores        | 4,7kΩ              | 1          | Resistência de carga.   | Conectado entre o 3.3V e o pino INT do MAX30100 |
-| Push Bottom       |              | 2          |    | Usado para alterar o estado da fita de led. |
+#### 1.1.2.1 Por que usar o MAX30100 ao invés do sensor de batimentos cardíacos comum?
 
----
+### 1.1.3 Características do Display oled SDD1306
 
-## 🛠️ Diagrama de Circuito
+### 1.1.4 Carcterísticas da fita de LED WS2812b 
 
-O diagrama elétrico configura-se como o esquemático da placa, feito no software de desenvolvimento KiCAD, conforme a figura abaixo:
-
-<p align = "center">Figura 1 - Esquemático </p>
-<div align = "center">
-  <img src = "/assets/esquematico.png">
-</div>
-<p align = "center"> Fonte: material produzido pelos autores.</p>
-
----
-
-## PCI - Placa de Circuito Impresso
-
-<p align = "center">Figura 2 - Placa de Circuito Impresso </p>
-<div align = "center">
-  <img src = "/assets/pci.png">
-</div>
-<p align = "center"> Fonte: material produzido pelos autores.</p>
-
-## 🔐 Conexões de Hardware
+### 1.2 Conexões de Hardware
 
 | Componente  | Pino no Microcontrolador | Conexão Física        |
 |-------------|--------------------------|-----------------------|
@@ -51,24 +36,41 @@ O diagrama elétrico configura-se como o esquemático da placa, feito no softwar
 | GND Geral        | GND                 | Barramento comum      |
 | VCC Geral        | 5V                  | Fonte regulada 5V     |
 
----
+## 2. Diagrama de Circuito
 
-## ⚙️ Instruções de Montagem
+### 2.1 Protótipo Físico do Projeto - Protoboard
+
+### 2.2 Esquemático da placa - KiCAD
+
+<p align = "center">Figura 1 - Esquemático </p>
+<div align = "center">
+  <img src = "/assets/esquematico.png">
+</div>
+<p align = "center"> Fonte: material produzido pelos autores.</p>
+
+### 2.3 PCI - Placa de Circuito Impresso - KiCAD
+
+<p align = "center">Figura 2 - Placa de Circuito Impresso </p>
+<div align = "center">
+  <img src = "/assets/pci.png">
+</div>
+<p align = "center"> Fonte: material produzido pelos autores.</p>
+
+## Instruções de Montagem
 
 1. Conecte os sensores EMG aos pinos analógicos A0 e A1 do microcontrolador.
 2. Conecte a fita de LED ao pino digital D5, e alimente-a com 5V estável.
 3. Garanta que todos os componentes compartilhem o mesmo GND.
 4. Utilize um multímetro para verificar continuidade antes de alimentar o circuito.
 
----
 
-## 🔋 Requisitos de Alimentação
+## Requisitos de Alimentação
 
 - Fonte de alimentação: 5V/2A.
 - Consumo típico: 1.2A (dependente da intensidade dos LEDs).
 
 ---
 
-## 🔂 Logs e Resultados
+## Logs e Resultados
 
 Documente aqui os resultados obtidos durante testes de hardware, como medições de tensão, correntes e sinais capturados pelos sensores.
