@@ -19,9 +19,9 @@ Esta seção descreve os componentes de hardware utilizados no projeto e como el
 
 ## 🛠️ Diagrama de Circuito
 
-Adicione o diagrama elétrico completo mostrando as conexões entre os componentes. Utilize ferramentas como **Fritzing** ou **KiCad** para criar esquemas visuais.
+O diagrama elétrico configura-se como o esquemático da placa, feito no software de desenvolvimento KiCAD, conforme a figura abaixo:
 
-![Diagrama do Circuito](../assets/circuit_diagram.png)
+![Diagrama do Circuito](../assets/esquematico.png)
 
 ---
 
