@@ -43,10 +43,13 @@ O diagrama elétrico configura-se como o esquemático da placa, feito no softwar
 
 | Componente  | Pino no Microcontrolador | Conexão Física        |
 |-------------|--------------------------|-----------------------|
-| Sensor EMG  | A0                       | Via cabo jumper       |
-| LED Strip   | D5                       | Via conector 3 pinos  |
-| GND Geral   | GND                      | Barramento comum      |
-| VCC Geral   | 5V                       | Fonte regulada 5V     |
+| Fita de LED      | 25                  | Via conector 3 pinos  |
+| Push Bottom 1    | 27                  | Via conector 3 pinos  |
+| Push Bottom 2    | 32                  | Via conector 3 pinos  |
+| SCL geral        | 22                  | Via cabo jumper       |
+| SDA geral        | 21                  | Via cabo jumper       |
+| GND Geral        | GND                 | Barramento comum      |
+| VCC Geral        | 5V                  | Fonte regulada 5V     |
 
 ---
 
